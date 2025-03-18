@@ -1,6 +1,6 @@
 # cursor-rules
 
-.cursor/rules files, mostly ones that I have made.
+Project `.cursor/rules` files, mostly ones that I have made.
 
 ## Helpful tooling
 
@@ -11,10 +11,14 @@ can use the following command to find your own `.cursor/rules` files:
 find .. -maxdepth 4 -path '*/.cursor/rules' -print
 ```
 
-## Credit
+## Helpful documentation
 
-Some patterns I found from the following sources:
+Right now the structure of rules and the frontmatter is not super-well documented.
 
- - https://ghuntley.com/specs/
-
-Interesting way of testing rules: https://github.com/codekiln/cursor-project-rule-test
+ - [Cursor documentation](https://docs.cursor.com/context/rules-for-ai)
+ - [Cursor changelog](https://www.cursor.com/changelog)
+   - Since 0.47.x: "Rules: Allow nested .cursor/rules directories..."
+ - Useful posts from Geoffrey Huntley
+   - https://ghuntley.com/stdlib
+   - https://ghuntley.com/specs
+ - [Interesting way of testing rules](https://github.com/codekiln/cursor-project-rule-test)
