@@ -1,0 +1,40 @@
+---
+description: Adding or editing Cursor rules (to encode "always" doing something)
+globs:
+alwaysApply: true
+---
+# Rules (meta)
+
+Rule rules:
+
+ - To add a new rule, create a file in .cursor/rules with .mdc extension
+ - Use kebab-case for rule filenames
+ - Do not use leading numbers for rule filenames
+
+Good rule filename examples:
+
+ - .cursor/rules/my-new-rule.mdc
+ - .cursor/rules/some-folder/my-new-rule.mdc  (it's ok to have subfolders)
+
+Bad rule filename examples (with reason for being problematic):
+
+ - .cursor/rules/00-my-new-rule.mdc  (has leading numbers)
+ - .cursor/rules/my_new_rule.mdc     (uses underscores instead of dashes)
+ - .cursorrules                      (not under .cursor/rules)
+
+All rule files must have the following frontmatter:
+
+```
+---
+description: <Several word text description of the rule>
+globs: <any file globs that this should apply to>
+alwaysApply: <true if global, otherwise false>
+---
+...then the rest of the file is standard Markdown...
+```
+
+If the user prompts you to add a rule, follow the process above.
+If the user says to "always" do something, add a new rule for it.
+If you make the same mistake more than once, add a new rule for it.
+
+See [markdown.mdc](mdc:.cursor/rules/markdown.mdc) for rules around Markdown formatting.

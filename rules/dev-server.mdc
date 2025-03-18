@@ -1,0 +1,9 @@
+---
+description: Local development server
+globs:
+alwaysApply: true
+---
+# dev-server
+
+If you see a message like "Port XXX is in use, trying another one..."
+Then kill all servers and try again

@@ -1,0 +1,15 @@
+---
+description: Creating or editing Markdown files
+globs: *.md,*.mdc
+alwaysApply: false
+---
+# Markdown Rules
+
+## Headers
+
+- All headers must be followed by exactly one blank line
+- Use ATX-style headers (`#` syntax) rather than underline style
+- Maximum of three header levels in most cases
+- Header text should be concise and descriptive
+
+See [rules.mdc](mdc:.cursor/rules/rules.mdc) for specific rules for .mdc files.

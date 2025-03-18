@@ -1,0 +1,73 @@
+---
+description: Rules for git usage in the project
+globs: ["**/.git/**"]
+alwaysApply: true
+---
+# Git Rules
+
+## Commits
+
+### Timing
+
+- Only commit when explicitly requested
+- Never ask about committing - wait for the request
+
+### Format
+
+```
+<Summary>
+
+[optional body]
+
+[optional footer(s)]
+```
+
+### Summary Line
+
+- **MUST** start with a capital letter
+- Maximum 50 characters total
+- Use imperative mood ("Add" not "Adds" or "Added")
+- Be specific and concise
+- No period at the end
+
+### Body
+
+- Optional but encouraged for non-trivial changes
+- Wrap at 80 characters
+- Use bullet points for multiple items
+- Explain *what* and *why*, not *how*
+- Separate from summary with a blank line
+
+### Commit Command Best Practices
+
+- **NEVER** use multi-line commands with `-m` flags in the terminal
+- Instead, use one of these approaches:
+  1. Create a temporary file with your message and use `git commit -F filename.txt`
+  2. Use `git commit` without `-m` to open the editor for multi-line messages
+  3. Use the `.gitmessage` template with `git commit -t .gitmessage`
+- For simple one-line commits, use `git commit -m "Summary"` (no body)
+
+### Examples
+
+Good:
+```
+Add score badges to found words
+
+- Display point value next to each word in the found words list
+- Use yellow background for pangrams, blue for regular words
+- Right-align score values for better readability
+```
+
+Bad:
+```
+updated the game controls and fixed some bugs in the UI that were causing issues with the display of the score which was not aligned properly and had wrong colors for pangrams
+```
+
+## Branch Names
+
+- Use kebab-case
+- Start with category (feature/, bugfix/, etc)
+- Include issue number if applicable
+- Be descriptive but concise
+
+Example: `feature/score-badges-123`

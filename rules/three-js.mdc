@@ -1,0 +1,31 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Three (library)
+
+Ensure that all THREE.Vectors correctly have a closing parenthesis at the end.
+Otherwise we get a syntax error.
+
+Example of failure case:
+
+```
+        startPoint = new THREE.Vector3(
+          points[0].x,
+          points[0].y,
+          points[0].z + startPercent * stripeLength * Math.sign(points[1].z - points[0].z)
+    }
+```
+
+Example of success case:
+
+```
+        endPoint = new THREE.Vector3(
+          points[0].x,
+          points[0].y,
+          points[0].z + endPercent * stripeLength * Math.sign(points[1].z - points[0].z)
+        )
+```
+
+Definitely do not fix with sed and/or create .bak files.

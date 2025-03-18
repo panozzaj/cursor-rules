@@ -1,0 +1,27 @@
+---
+description: Python development and pip / package management
+globs: ["*.py", "requirements.txt"]
+alwaysApply: true
+---
+## Python versions / virtualenv
+
+Use a virtual environment for cleanly managing Python versions and packages
+
+## Python packages
+
+Manage solely through [requirements.txt](mdc:requirements.txt)
+Sort dependencies alphabetically whenever modifying the file
+Whenever installing a package with pip, add it to [requirements.txt](mdc:requirements.txt) first
+
+Install it through `pip install -r requirements.txt`
+
+### pip install --upgrade pip
+
+Install pip updates if you see a notice about them when installing another package.
+
+Example:
+
+```
+[fake notice] A new release of pip is available: 25.0 -> 25.0.1
+[fake notice] To update, run: pip install --upgrade pip
+```
