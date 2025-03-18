@@ -2,12 +2,14 @@
 
 .cursor/rules files, mostly ones that I have made.
 
-## Helpful scripts
+## Helpful tooling
 
-If you have a bunch of folders with `.cursor/rules` files, you can use the
-following command to find them:
+If there are a bunch of directories at the same level as this directory, you
+can use the following command to find your own `.cursor/rules` files:
 
+```
 find .. -maxdepth 4 -path '*/.cursor/rules' -print
+```
 
 ## Credit
 
