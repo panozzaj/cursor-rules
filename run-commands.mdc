@@ -1,0 +1,13 @@
+---
+description: Instructs the AI to default to running commands itself to make progress.
+globs: []
+alwaysApply: true
+---
+
+# Running Commands
+
+When a terminal command needs to be run to make forward progress on the user's
+request (e.g., installing dependencies, running tests, starting servers),
+please run the command directly using the available tools instead of asking the
+user to run it, unless there's a specific reason the user needs to perform the
+action manually.
