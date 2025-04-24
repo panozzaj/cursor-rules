@@ -14,7 +14,7 @@ Rule rules:
 Good rule filename examples:
 
  - .cursor/rules/my-new-rule.mdc
- - .cursor/rules/some-folder/my-new-rule.mdc  (it's ok to have subfolders)
+ - .cursor/rules/some-folder/my-new-rule.mdc  (it's ok to have subfolders for organization)
 
 Bad rule filename examples (with reason for being problematic):
 
