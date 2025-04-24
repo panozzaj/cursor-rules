@@ -1,17 +1,17 @@
-description: Creating or editing spec files
+description: Creating or editing requirements files
 globs:
 alwaysApply: true
 ---
-# Specification Maintenance Rules
+# Requirements Maintenance Rules
 
-Specs hold the high-level requirements for the project.
+Requirements hold the high-level requirements for the project.
 
-All features must be added to a well-named file in the `specs` folder
+All features must be added to a well-named file in the `requirements` folder
 
 ## Adding New Features
 
 - Each feature must be described in detail, including its purpose and requirements
-- Use subfolders of `specs` to organize related features
+- Use subfolders of `requirements` to organize related features
 - Use GitHub-style checkboxes `- [ ]` for all features
 - Place new features in the most appropriate file
 - If no appropriate file exists, create a new one
@@ -21,11 +21,11 @@ All features must be added to a well-named file in the `specs` folder
 
 - Update checkbox to `- [x]` when feature is fully implemented
 - Add implementation details as sub-items if needed
-- Keep specs synchronized with actual implementation
+- Keep requirements synchronized with actual implementation
 
 ## Validation
 
-- Verify specs match implemented features
-- Remove or update outdated specifications
-- Resolve conflicts between specs and implementation
+- Verify requirements match implemented features
+- Remove or update outdated requirements
+- Resolve conflicts between requirements and implementation
 - Keep track of dependencies between features
