@@ -1,0 +1,21 @@
+---
+description: Testing strategy - Use selective tests for speed, full suite for verification.
+globs: 
+alwaysApply: true
+---
+# Testing Strategy for Faster Feedback
+
+When iterating on specific functionality or making localized changes:
+
+1.  **Identify Relevant Tests:** Based on the code modified, determine the subset of tests most likely to be impacted.
+
+2.  **Run Targeted Tests:** Execute only the identified subset of tests to get fast feedback on the immediate changes. Use `pytest -m <marker>` or `pytest -k <keyword>` or `pytest <path/to/test_file.py>`. Document which command you are running and why.
+
+3.  **Iterate:** Use the results of the targeted tests to refine the changes.
+
+**After completing a logical unit of work, fixing a bug, or before considering a feature stable:**
+
+1.  **Run Full Suite:** Execute the *entire* test suite (e.g., by running `pytest` with no specific targets) to ensure the changes haven't introduced regressions elsewhere in the codebase.
+2.  **Verify:** Ensure all tests pass before proceeding to the next major step or concluding the task.
+
+The goal is to balance speed during development with the confidence provided by a full test suite run.
