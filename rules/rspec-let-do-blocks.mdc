@@ -1,6 +1,6 @@
 ---
 description:
-globs: *_rspec.rb
+globs: *_spec.rb
 alwaysApply: false
 ---
 # RSpec: Use do...end for Multi-line `let` Declarations & Format Method Calls
