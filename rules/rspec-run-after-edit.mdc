@@ -1,0 +1,20 @@
+---
+description: Run RSpec Tests After Editing
+globs:
+alwaysApply: true
+---
+# Run RSpec Tests After Edit
+
+When an RSpec file (`spec/**/*_spec.rb`) is created or edited, run the tests within that file to verify the changes and catch any regressions or errors.
+
+Use a command like:
+
+```sh
+# Run all tests in the file
+./bin/rspec path/to/your_spec.rb
+
+# Run a specific test by line number (useful after adding/modifying one test)
+./bin/rspec path/to/your_spec.rb:line_number
+```
+
+Debug and fix any failures that arise before proceeding.

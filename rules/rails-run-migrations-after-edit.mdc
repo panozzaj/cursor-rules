@@ -1,0 +1,10 @@
+---
+description: Run migrations after editing them
+globs:
+alwaysApply: true
+---
+# Run Migrations After Edit
+
+When a file matching `db/migrate/*.rb` is edited, run the database migrations to apply the changes.
+
+Use the command: `bin/rails db:migrate`

@@ -1,0 +1,68 @@
+---
+description:
+globs: *_rspec.rb
+alwaysApply: false
+---
+# RSpec: Use do...end for Multi-line `let` Declarations & Format Method Calls
+
+1.  **Use `do...end` for Multi-line `let`:** When a `let` or `let!` declaration's body spans multiple lines (e.g., defining a multi-line hash/array, or a method call with multiple arguments/lines), use the `do ... end` block syntax instead of curly braces `{ ... }`.
+
+2.  **Use `do...end` for Complex Single Lines:** Even if a `let` body is technically a single expression, use `do...end` if the expression is long or complex (e.g., involves significant method chaining, complex interpolation, or nested structures) to improve readability.
+
+3.  **Format Multi-line Method Calls:** When the body of a `let` is a method call with keyword arguments or multiple arguments that make the line long, format the call across multiple lines with one argument per line, indented.
+
+4.  **Prefer Ruby Hashes for JSON:** When creating JSON strings within `let` blocks, prefer constructing them from Ruby hashes using `.to_json` for better readability and maintainability.
+
+**Good:**
+
+```ruby
+# Multi-line array
+let(:ignore_patterns) do
+  [
+    { method: :get, path: %r{/ignored/.*} },
+    { method: :post, path: %r{/other/} },
+    { path: %r{/any_method/.*} }
+  ]
+end
+
+# Multi-line method call with keyword args
+let(:response) do
+  Faraday::Response.new(
+    status: 200,
+    body: { data: :test }.to_json, # Construct JSON from hash
+    response_headers: {
+      'Content-Type' => 'application/json'
+    }
+  )
+end
+
+# Multi-line hash definition
+let(:ignored_env) do
+  { method: :get, url: URI('http://example.com/ignored/path'), body: nil }
+end
+
+# Complex single line expression
+let(:ignored_with_params_cache_key) do
+  "faraday_cache:#{Digest::MD5.hexdigest("#{ignored_env_with_params[:method]}:#{ignored_env_with_params[:url]}:#{ignored_env_with_params[:body]}")}"
+end
+```
+
+**Bad:**
+
+```ruby
+# Using { ... } for multi-line blocks
+let(:ignore_patterns) { [
+    { method: :get, path: %r{/ignored/.*} },
+    { method: :post, path: %r{/other/} },
+    { path: %r{/any_method/.*} }
+  ] }
+
+# Complex expression squeezed onto one line with { ... }
+let(:ignored_with_params_cache_key) { "faraday_cache:#{Digest::MD5.hexdigest("#{ignored_env_with_params[:method]}:#{ignored_env_with_params[:url]}:#{ignored_env_with_params[:body]}")}" }
+```
+
+For **simple** single-line declarations, curly braces are acceptable.
+
+```ruby
+let(:simple_value) { 123 }
+```

@@ -1,0 +1,24 @@
+---
+description: Ruby Regex literals with slashes
+globs: *.rb
+alwaysApply: false
+---
+# Use %r{} for **Ruby** Regex Literals Containing Slashes
+
+When a regular expression literal contains one or more forward slashes (`/`), use the `%r{...}` syntax instead of the default `/.../` syntax.
+
+This improves readability by avoiding the need for excessive escaping of the forward slash character within the regex pattern.
+
+**Good:**
+
+```ruby
+pattern = %r{/some/path/}
+```
+
+**Bad:**
+
+```ruby
+pattern = /\/some\/path\//
+```
+
+Note that printing off regular expressions may still have escaped slashes.
