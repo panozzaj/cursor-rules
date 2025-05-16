@@ -1,0 +1,22 @@
+---
+description: Ruby `unless` assignment guards OK
+globs: *.rb
+alwaysApply: false
+---
+If you encounter Ruby `unless` guards, they are OK to use.
+
+If you see them in existing code and aren't changing the functionality, keep
+them as-is unless the line gets really long or the logic is confusing.
+
+Example of something that's OK to keep:
+
+```ruby
+def some_method(candidate, scenario)
+  unless scenario_solution = QualifiedService.get_challenge_results(candidate, scenario)
+    raise 'No solution found'
+  end
+```
+
+I (Anthony) find that this makes the code a little easier to read and follow.
+
+Please don't comment on the fact that you are doing this in the code though.

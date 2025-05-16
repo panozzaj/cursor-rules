@@ -1,0 +1,12 @@
+---
+description: RSpec testing helper commands
+globs:
+alwaysApply: true
+---
+
+On this computer, you can use the following terminal commands to quickly run
+useful subsets of tests:
+
+`$ gspec` -> run spec files that have changes from `HEAD`
+
+`$ gdomspec` -> run spec files that differ from `origin/master` (typically specs from this feature branch)

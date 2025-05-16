@@ -1,0 +1,22 @@
+---
+description: Rails schema table command
+globs:
+alwaysApply: true
+---
+On this computer, you may use the custom `table` CLI command to more easily
+inspect the schema of the Rails application (which may be large).
+
+Example:
+
+```bash
+$ table users
+ create_table "users" do |t|
+   t.string "name"
+   t.string "email"
+   t.string "password_digest"
+   t.datetime "created_at", null: false
+   t.datetime "updated_at", null: false
+ end
+```
+
+Note that this will also include things like indexes, etc.
